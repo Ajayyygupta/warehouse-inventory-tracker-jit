@@ -37,7 +37,7 @@ public class Product {
 			return threshold;
 		}
 		public void setThreshold(int threshold) {
-			this.threshold = threshold;
+			this.threshold = threshold; 
 		}
 		
 	    @Override

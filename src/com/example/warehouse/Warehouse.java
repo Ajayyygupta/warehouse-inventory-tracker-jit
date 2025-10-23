@@ -9,8 +9,19 @@ public class Warehouse {
 	
 	public void addProduct(Product product)
 	{
-		inventory.put(product.getId(), product);
+		inventory.put(product.getId(), product); 
 		System.out.println("Product Added:"+product.getName()+"Product ID:"+product.getId());
+	}
+	
+	public void receiveShipment(String id, int quantity)	
+	{
+		Product product=inventory.get(id);
+		if(product==null)
+		{
+			System.out.println("Prodcut not found"+id);
+		}
+		product.setQuantity(product.getQuantity()+quantity);
+		System.out.println("Stock Increased:"+quantity+"units for"+product.getName());
 	}
 	
 	public void display()
@@ -18,7 +29,7 @@ public class Warehouse {
 		System.out.println("\nCurrent Inventory:");
 		for(Product p: inventory.values())
 		{
-			System.out.println(p);
+			System.out.println(p); 
 		}
 	}
 
