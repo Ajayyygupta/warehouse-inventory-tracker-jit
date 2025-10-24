@@ -3,13 +3,14 @@ package com.example.warehouse;
 public class Main {
 	
 	public static void main(String[] args) {
-		Warehouse w1=new Warehouse();
-		Product laptop=new Product("p1", "Laptop", 20, 10);
-		w1.addProduct(laptop);
 		
-		w1.receiveShipment("p1", 10);
-		w1.display(); 
+		AlertService alertService=new RestockAlertService();
+		Warehouse w1=new Warehouse(alertService);
 		
+		  w1.addProduct(new Product("P101", "Laptop", 0, 5));
+	        w1.receiveShipment("P101", 10); 
+	        w1.fulfillOrder("P101", 6);    
+	        w1.showInventory();
 		
 	}
 	
