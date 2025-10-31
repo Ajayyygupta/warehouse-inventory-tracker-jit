@@ -9,6 +9,7 @@ public class Warehouse {
 	
 	public AlertService alertService;
 	
+	
 	public Warehouse(AlertService alertService) 
 	{
 		this.alertService=alertService;
